@@ -25,7 +25,16 @@
 
 
 % Custom font
+\usepackage[T1]{fontenc}
 \usepackage[default]{lato}
+
+% Keep the PDF text layer plain for parsers: no fi/fl/ff ligature glyphs
+% (they broke the email and URLs when extracted) and no words split by hyphenation
+\usepackage{microtype}
+\DisableLigatures[f]{encoding = *, family = *}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\emergencystretch=1em
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -71,11 +80,11 @@
 %-----------EXPERIENCE-----------%
 \input{src/experience}
 
+%-----------SKILLS-----------%
+\input{src/skills.tex}
+
 %-----------EDUCATION-----------%
 \input{src/education.tex}
-
-% %-----------HONORS & AWARDS-----------%
-\input{src/honors}
 
 % %-----------PROJECTS-----------%
 % \input{src/projects}
@@ -83,8 +92,8 @@
 %-----------PUBLICATIONS-----------%
 \input{src/publications}
 
-%-----------SKILLS-----------%
-\input{src/skills.tex}
+% %-----------HONORS & AWARDS-----------%
+\input{src/honors}
 
 % %-----------CERTIFICATIONS-----------%
 % \input{src/licenses}
